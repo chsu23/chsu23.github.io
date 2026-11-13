@@ -19,9 +19,10 @@
       --portrait-background: #eff4f8;
 
       /* 可修改｜頁首漸層兩端的色碼。最後一個高度是桌面版的上限。 */
-      --banner-start: #10233D;
-      --banner-end: #417B8B;
-      --banner-height: clamp(15rem, 26vw, 22rem);
+      --banner-start: #103A48;
+      --banner-mid: #08645F;
+      --banner-end: #81D8D0;
+      --banner-height: clamp(13.5rem, 23vw, 19rem);
     }
 
     * { box-sizing: border-box; }
@@ -47,7 +48,7 @@
       place-items: center;
       min-height: var(--banner-height);
       padding: 1rem;
-      background: linear-gradient(90deg, var(--banner-start), var(--banner-end));
+      background: linear-gradient(90deg, var(--banner-start), var(--banner-mid) 68%, var(--banner-end));
       color: #fff;
       text-align: center;
     }
@@ -56,6 +57,7 @@
       font-size: clamp(2rem, 5vw, 3.25rem);
       font-weight: 700;
       line-height: 1.15;
+      text-shadow: 0 1px 4px #103A4880;
     }
 
     h2 {
