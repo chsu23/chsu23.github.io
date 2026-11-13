@@ -21,7 +21,7 @@
       /* 可修改｜頁首漸層兩端的色碼。最後一個高度是桌面版的上限。 */
       --banner-start: #10233D;
       --banner-end: #417B8B;
-      --banner-height: clamp(6.5rem, 11vw, 9rem);
+      --banner-height: clamp(15rem, 26vw, 22rem);
     }
 
     * { box-sizing: border-box; }
@@ -79,7 +79,7 @@
 
     .profile {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 1.5rem;
       padding-bottom: 1rem;
@@ -120,7 +120,7 @@
       flex: 0 0 auto;
       place-items: center;
       /* 可修改｜桌面版照片寬度與長寬比。 */
-      width: 190px;
+      width: 220px;
       height: auto;
       aspect-ratio: 19 / 21;
       border: 1px solid var(--line);
@@ -196,12 +196,11 @@
       }
 
       .profile {
-        align-items: flex-start;
         gap: 0.75rem;
       }
 
       .portrait {
-        width: clamp(6rem, 28vw, 8rem);
+        width: clamp(6.5rem, 29vw, 8.5rem);
         font-size: 1.25rem;
       }
     }
@@ -235,7 +234,7 @@
 
       </div>
  
-      <img class="portrait" src="./profile.jpg" alt="Portrait of Chang-Chieh Hsu" width="190" height="210">
+      <img class="portrait" src="./profile.jpg" alt="Portrait of Chang-Chieh Hsu" width="220" height="243">
     </header>
 
     <section aria-labelledby="bio">
