@@ -20,12 +20,6 @@
       --bio-link: #367AB6;
       --line: #dce4ea;
       --portrait-background: #eff4f8;
-
-      /* 可修改｜頁首漸層兩端的色碼。最後一個高度是桌面版的上限。 */
-      --banner-start: #103A48;
-      --banner-mid: #08645F;
-      --banner-end: #81D8D0;
-      --banner-height: clamp(13.5rem, 23vw, 19rem);
     }
 
     * { box-sizing: border-box; }
@@ -45,22 +39,6 @@
     }
 
     h1, h2, p { margin: 0; }
-
-    .site-banner {
-      display: grid;
-      place-items: center;
-      min-height: var(--banner-height);
-      padding: 1rem;
-      background: linear-gradient(90deg, var(--banner-start), var(--banner-mid) 68%, var(--banner-end));
-      text-align: center;
-    }
-
-    .site-banner h1 {
-      font-size: clamp(2rem, 5vw, 3.25rem);
-      font-weight: 700;
-      line-height: 1.15;
-      color: #fff;
-    }
 
     h1, h2, h3, h4, h5, h6 { color: var(--heading-green); }
 
@@ -145,16 +123,14 @@
 
     /* 可修改｜各區標題靠左排列，項目清單縮排並加圓點。 */
     .research-list,
-    .cv-entries,
-    .publications {
+    .cv-entries {
       margin: 0;
       padding-inline-start: 1.5rem;
       list-style: disc outside;
     }
 
     .research-list li + li { margin-top: 0.25rem; }
-    .cv-entries li + li,
-    .publications li + li { margin-top: 0.45rem; }
+    .cv-entries li + li { margin-top: 0.45rem; }
 
     .cv-entries li > span {
       display: block;
@@ -167,37 +143,6 @@
     }
 
     details[open] > summary { margin-bottom: 0.7rem; }
-
-    .paper-title { font-weight: 650; }
-    .paper-details { color: var(--muted); }
-    .paper-authors {
-      color: #647281;
-      font-weight: 400;
-      font-size: 1.17rem;
-    }
-
-    /* 可修改｜作者列中自己的名字。 */
-    .paper-authors .author-self {
-      color: #000;
-      font-size: 1.25rem;
-      font-weight: 800;
-    }
-
-    .research-overview { margin: 1rem 0 0; }
-
-    .research-overview img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--line);
-      border-radius: 0.4rem;
-    }
-
-    .research-overview figcaption {
-      margin-top: 0.35rem;
-      color: var(--muted);
-      font-size: 1.125rem;
-    }
 
     @media (max-width: 32rem) {
       main {
@@ -215,6 +160,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="./site-header.css">
 </head>
 
 <body>
@@ -222,6 +168,13 @@
     <!-- 可修改｜頁首橫幅中央顯示的姓名 -->
     <h1>Chang-Chieh Hsu (Jason)</h1>
   </header>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="./index.html" aria-current="page">Home</a>
+    <a href="./research-interests.html">Research</a>
+    <a href="./publications.html">Publications</a>
+    <a href="./research-tools.html">Research Tools</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
 
   <main>
     <header class="profile">
@@ -264,23 +217,6 @@
       </ul>
     </section>
 
-    <section aria-labelledby="research">
-      <h2 id="research">Research Interests</h2>
-      <!-- 可修改｜研究方向。每個 li 是一個項目，可複製或刪除整行。 -->
-      <ul class="research-list">
-        <li><strong>Extracellular vesicles:</strong> Selective isolation and cancer biomarkers analysis</li>
-        <li><strong>Biosensor development:</strong> Label-free electrical detection of extracellular using Nanopore and SPR biosnesor vesicles</li>
-        <li><strong>Targeted nanomedicine:</strong> X-ray–activated nanomaterials for cancer treatment/bone marrow conditioning</li>
-      </ul>
-
-      <!-- 可修改｜用同名的 research-overview.png 覆蓋舊圖即可。圖說可在 figcaption 裡修改。 -->
-      <figure class="research-overview">
-        <img alt="Four research areas: exosome-based liquid biopsy, selective extracellular vesicle isolation, nanopore biosensing, and targeted nanomedicine for stem cell transplant conditioning." width="1491" height="1055" loading="lazy" decoding="async"
-          src="./research-overview.png">
-        <figcaption>My research spans exosome-based liquid biopsy, selective extracellular vesicle isolation, nanopore biosensing, and targeted nanomedicine for bone marrow conditioning before hematopoietic stem cell transplantation. <a href="mailto:changchieh.hsu@rutgers.edu">Please contact me</a> for permission to reuse this figure.</figcaption>
-      </figure>
-    </section>
-
     <!-- 可修改｜學歷。每個 li 是一筆學位資料。 -->
     <section aria-labelledby="education">
       <h2 id="education">Education</h2>
@@ -310,77 +246,6 @@
       </ul>
     </section>
 
-    <!-- 可修改｜研究專案。 -->
-    <section aria-labelledby="projects">
-      <h2 id="projects">Research Projects</h2>
-      <ul class="cv-entries">
-        <li><strong>Exo-PROS liquid biopsy biosensor</strong><p>Designed the surface plasmon resonance sensing architecture, engineered the capture surface, and built the data analysis workflow. Benchmarked the assay against ELISA, qRT-PCR, and Western blot.</p></li>
-        <li><strong>Extracellular vesicle biomarkers for cancer diagnosis and treatment monitoring</strong><p>Evaluated extracellular vesicle biomarkers in cohorts of patients with breast or lung cancer and investigated whether early changes in vesicle biomarkers could help predict response to immune checkpoint inhibitors.</p></li>
-        <li><strong>Programmable extracellular vesicle enrichment</strong><p>Developed a programmable nanopore-based workflow for selective enrichment of extracellular vesicle subpopulations for biomarker and functional studies. The platform can process up to 100 mL of sample.</p></li>
-      </ul>
-    </section>
-
-    <section aria-labelledby="publications">
-      <h2 id="publications">Journal Publications</h2>
-      <!-- 可修改｜期刊論文。新增時複製一組 li，替換 DOI 網址、標題、作者、期刊與年份。
-           新發表的論文可放在清單最上面。 -->
-      <ul class="publications">
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1158/2767-9764.CRC-26-0214">The Use of TF-Ag-α to Selectively Capture Tumor-Derived Extracellular Vesicles and Enhance the Predictive Performance of Extracellular Vesicle PD-L1 for Response to Immune Checkpoint Inhibitors</a>
-          <p class="paper-details paper-authors"><strong class="author-self">Chang-Chieh Hsu</strong>, Man Qi, Fumito Ito, Grace K. Dy, Kate Rittenhouse-Olson, and Yun Wu</p>
-          <p class="paper-details"><cite>Cancer Research Communications</cite> · 2026</p>
-        </li>
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1158/2767-9764.CRC-23-0505">Exosomal Thomsen-Friedenreich Glycoantigen: A New Liquid Biopsy Biomarker for Lung and Breast Cancer Diagnoses</a>
-          <p class="paper-details paper-authors"><strong class="author-self">Chang-Chieh Hsu</strong>, Yafei Su, Kate Rittenhouse-Olson, Kristopher M. Attwood, Wilfrido Mojica, Mary E. Reid, Grace K. Dy, 
-            and Yun Wu</p>
-          <p class="paper-details"><cite>Cancer Research Communications</cite> · 2024</p>
-        </li>
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1021/acsnano.2c10970">Simultaneous Detection of Tumor Derived Exosomal Protein–MicroRNA Pairs with an Exo-PROS Biosensor for Cancer Diagnosis</a>
-          <p class="paper-details paper-authors"><strong class="author-self">Chang-Chieh Hsu</strong>, Yunchen Yang, Eric Kannisto, Xie Zeng, Guan Yu, Santosh K. Patnaik, Grace K. Dy, Mary E. Reid, Qiaoqiang Gan, and Yun Wu</p>
-          <p class="paper-details"><cite>ACS Nano</cite> · 2023</p>
-        </li>
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1177/15353702221110813">Recent Advances in Nanotechnology-Enabled Biosensors for Detection of Exosomes as New Cancer Liquid Biopsy</a>
-          <p class="paper-details paper-authors"><strong class="author-self">Chang-Chieh Hsu</strong> and Yun Wu</p>
-          <p class="paper-details"><cite>Experimental Biology and Medicine</cite> · 2022</p>
-        </li>
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1016/j.eng.2022.03.018">Super-Resolution Displacement Spectroscopic Sensing over a Surface “Rainbow”</a>
-          <p class="paper-details paper-authors">Lyu Zhou, Nan Zhang, <strong class="author-self">Chang-Chieh Hsu</strong>, Matthew Singer, Xie Zeng, Yizheng Li, Haomin Song, Josep Jornet, Yun Wu, and Qiaoqiang Gan</p>
-          <p class="paper-details"><cite>Engineering</cite> · 2022</p>
-        </li>
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1038/s41417-022-00485-y">Extracellular Sialyltransferase ST6GAL1 in Breast Tumor Cell Growth and Invasiveness</a>
-          <p class="paper-details paper-authors">Nitai C. Hait, Aparna Maiti, Rongrong Wu, Valerie L. Andersen, <strong class="author-self">Chang-Chieh Hsu</strong>, Yun Wu, Digantkumar G. Chapla, Kazuaki Takabe, Michael E. Rusiniak, Wiam Bshara, Jianmin Zhang, Kelley W. Moremen, and Joseph T. Y. Lau</p>
-          <p class="paper-details"><cite>Cancer Gene Therapy</cite> · 2022</p>
-        </li>
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1021/acsami.8b00015">Lanthanide-Doped Core–Shell–Shell Nanocomposite for Dual Photodynamic Therapy and Luminescence Imaging by a Single X-ray Excitation Source</a>
-          <p class="paper-details paper-authors"><strong class="author-self">Chang-Chieh Hsu</strong>, Syue-Liang Lin, and C. Allen Chang</p>
-          <p class="paper-details"><cite>ACS Applied Materials &amp; Interfaces</cite> · 2018</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- 可修改｜書籍章節和會議論文。 -->
-    <section aria-labelledby="other-publications">
-      <h2 id="other-publications">Book Chapter and Conference Proceedings</h2>
-      <ul class="publications">
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1201/9781003449942-16">An Exo-PROS Biosensor Simultaneously Detects Tumor-Derived Exosomal Protein–MicroRNA Pairs for Lung and Breast Cancer Diagnosis</a>
-          <p class="paper-details paper-authors"><strong class="author-self">Chang-Chieh Hsu</strong> and Yun Wu</p>
-          <p class="paper-details">Book chapter in <cite>Cancer Detection and Diagnosis: A Handbook of Emerging Technologies</cite> · CRC Press, 2025</p>
-        </li>
-        <li>
-          <a class="paper-title" href="https://doi.org/10.1364/CLEO_FS.2023.FF1C.3">Plasmonic “Rainbow” for Super-Resolution Displacement Spectroscopic Analysis and Surface Biosensing</a>
-          <p class="paper-details paper-authors">Lyu Zhou, Nan Zhang, <strong class="author-self">Chang-Chieh Hsu</strong>, Matthew Singer, Xie Zeng, Yizheng Li, Haomin Song, Josep Jornet, Yun Wu, and Qiaoqiang Gan</p>
-          <p class="paper-details"><cite>Conference on Lasers and Electro-Optics (CLEO)</cite> · 2023</p>
-        </li>
-      </ul>
-    </section>
-
     <!-- 可修改｜獎項及提名。 -->
     <section aria-labelledby="awards">
       <h2 id="awards">Honors and Awards</h2>
@@ -406,24 +271,6 @@
         <li><strong>Student mentoring</strong><p>Mentored 15 students across Ph.D., master’s, undergraduate, and high school programs.</p></li>
         <li><strong>Journal peer review</strong><p><cite>Biomedical Materials &amp; Devices</cite>, <cite>Cancer Reports</cite>, <cite>Clinical and Translational Discovery</cite>, <cite>Microchimica Acta</cite>, and <cite>Scientific Reports</cite>.</p></li>
       </ul>
-    </section>
-
-    <!-- 可修改｜會議發表，包含共同作者的報告。 -->
-    <section aria-labelledby="conference">
-      <h2 id="conference">Conference Presentations</h2>
-      <details>
-        <summary>View 8 conference presentations</summary>
-        <ul class="cv-entries">
-          <li><strong>Prediction and Monitoring of Response to Immune Checkpoint Inhibitor in Lung Cancer Using Exosomal PD-L1–microRNA Pairs Detected by an Exo-PROS Liquid Biopsy Assay</strong><span>BMES Annual Meeting · Oral presentation · Baltimore, 2024</span></li>
-          <li><strong>Exosomal Thomsen–Friedenreich Glycoantigen as a Liquid Biopsy Biomarker for Lung and Breast Cancer</strong><span>BMES Annual Meeting · Oral presentation · Baltimore, 2024</span></li>
-          <li><strong>Selective Capture of Tumor-Derived Exosomes Using TF-Ag-α to Improve Prediction of Response to Immune Checkpoint Inhibitors</strong><span>BMES Annual Meeting · Poster · Baltimore, 2024</span></li>
-          <li><strong>Exosomal Thomsen–Friedenreich Glycoantigen as a New Biomarker for Cancer Liquid Biopsy</strong><span>BMES Annual Meeting · Poster · Seattle, 2023</span></li>
-          <li><strong>Exosomal PD-L1–microRNA Pairs Detected by Exo-PROS for Prediction of Immune Checkpoint Inhibitor Response</strong><span>BMES Annual Meeting · Poster · Seattle, 2023</span></li>
-          <li><strong>Super-Resolution Displacement Spectroscopic Sensing over a Surface “Rainbow”</strong><span>Frontiers in Optics + Laser Science · Oral presentation · Rochester, 2022</span></li>
-          <li><strong>Exosomal Thomsen–Friedenreich Glycoantigen as a New Biomarker for Cancer Early Detection</strong><span>BMES Annual Meeting · Poster · Orlando, 2021</span></li>
-          <li><strong>Detection of Exosomal Annexin-A8 and miR-342 for Breast Cancer Diagnosis with an Exo-PROS Assay</strong><span>BMES Annual Meeting · Poster · Orlando, 2021</span></li>
-        </ul>
-      </details>
     </section>
 
     <!-- 可修改｜技術技能。 -->

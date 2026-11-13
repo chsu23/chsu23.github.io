@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research Tools | Chang-Chieh Hsu (Jason)</title>
+  <meta name="description" content="ROC analysis and paired statistical comparisons for research.">
+  <link rel="stylesheet" href="./site-header.css">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: #1e2934;
+      font: 1.25rem/1.55 Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+    }
+    h1, p { margin: 0; }
+    main {
+      width: min(100% - 2rem, 75rem);
+      margin: 0 auto;
+      padding: 1.25rem 0 2rem;
+    }
+    .tool-link {
+      color: #244f74;
+      text-underline-offset: 0.2em;
+    }
+    .tool-link:focus-visible {
+      outline: 2px solid #244f74;
+      outline-offset: 3px;
+    }
+    .roc-tool {
+      display: block;
+      width: 100%;
+      height: max(34rem, 80vh);
+      margin-top: 0.75rem;
+      border: 1px solid #dce4ea;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-banner">
+    <h1>Research Tools</h1>
+  </header>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="./index.html">Home</a>
+    <a href="./research-interests.html">Research</a>
+    <a href="./publications.html">Publications</a>
+    <a href="./research-tools.html" aria-current="page">Research Tools</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+  <main>
+    <!-- 可修改｜ROC 專案網址。請同時更新下方連結和 iframe 的 src。 -->
+    <p><a class="tool-link" href="https://chsu23.github.io/Ultimate-ROC-analysis/" target="_blank" rel="noopener">Open ROC tool in a new tab</a></p>
+    <iframe class="roc-tool" src="https://chsu23.github.io/Ultimate-ROC-analysis/" title="ROC Analysis Tool"></iframe>
+  </main>
+</body>
+</html>

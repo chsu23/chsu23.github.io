@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research | Chang-Chieh Hsu (Jason)</title>
+  <meta name="description" content="Research interests of Chang-Chieh Hsu in extracellular vesicles, biosensor development, and targeted nanomedicine.">
+  <link rel="stylesheet" href="./site-header.css">
+  <style>
+    :root {
+      --muted: #52616f;
+      --line: #dce4ea;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: #1e2934;
+      font: 1.25rem/1.55 Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+    }
+
+    h1 { margin: 0; }
+
+    main {
+      width: min(100% - 2rem, 64rem);
+      margin: 0 auto;
+      padding: 1.25rem 0 2rem;
+    }
+
+    a { color: #244f74; text-underline-offset: 0.2em; }
+    a:focus-visible { outline: 2px solid #244f74; outline-offset: 4px; }
+
+    .research-list {
+      margin: 0;
+      padding-inline-start: 1.5rem;
+    }
+
+    .research-list li + li { margin-top: 0.25rem; }
+
+    .research-overview { margin: 1rem 0 0; }
+
+    .research-overview img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--line);
+      border-radius: 0.4rem;
+    }
+
+    .research-overview figcaption {
+      margin-top: 0.35rem;
+      color: var(--muted);
+      font-size: 1.125rem;
+    }
+
+    section + section { margin-top: 1.5rem; }
+
+    h2 {
+      margin: 0 0 0.45rem;
+      color: #159957;
+      font-size: 1.7rem;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .cv-entries {
+      margin: 0;
+      padding-inline-start: 1.5rem;
+      list-style: disc outside;
+    }
+
+    .cv-entries li + li { margin-top: 0.45rem; }
+    .cv-entries p { margin: 0; }
+
+  </style>
+</head>
+<body>
+  <header class="site-banner">
+    <h1 id="research">Research</h1>
+  </header>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="./index.html">Home</a>
+    <a href="./research-interests.html" aria-current="page">Research</a>
+    <a href="./publications.html">Publications</a>
+    <a href="./research-tools.html">Research Tools</a>
+    <a href="./contact.html">Contact</a>
+  </nav>
+  <main>
+    <section aria-labelledby="research">
+      <!-- 可修改｜研究方向。每個 li 是一個項目，可複製或刪除整行。 -->
+      <ul class="research-list">
+        <li><strong>Extracellular vesicles:</strong> Selective isolation and cancer biomarkers analysis</li>
+        <li><strong>Biosensor development:</strong> Label-free electrical detection of extracellular using Nanopore and SPR biosnesor vesicles</li>
+        <li><strong>Targeted nanomedicine:</strong> X-ray–activated nanomaterials for cancer treatment/bone marrow conditioning</li>
+      </ul>
+
+      <!-- 可修改｜用同名的 research-overview.png 覆蓋舊圖即可。圖說可在 figcaption 裡修改。 -->
+      <figure class="research-overview">
+        <img alt="Four research areas: exosome-based liquid biopsy, selective extracellular vesicle isolation, nanopore biosensing, and targeted nanomedicine for stem cell transplant conditioning." width="1491" height="1055" loading="lazy" decoding="async"
+          src="./research-overview.png">
+        <figcaption>My research spans exosome-based liquid biopsy, selective extracellular vesicle isolation, nanopore biosensing, and targeted nanomedicine for bone marrow conditioning before hematopoietic stem cell transplantation. <a href="./contact.html">Please contact me</a> for permission to reuse this figure.</figcaption>
+      </figure>
+    </section>
+
+    <!-- 可修改｜研究專案。 -->
+    <section aria-labelledby="projects">
+      <h2 id="projects">Research Projects</h2>
+      <ul class="cv-entries">
+        <li><strong>Exo-PROS liquid biopsy biosensor</strong><p>Designed the surface plasmon resonance sensing architecture, engineered the capture surface, and built the data analysis workflow. Benchmarked the assay against ELISA, qRT-PCR, and Western blot.</p></li>
+        <li><strong>Extracellular vesicle biomarkers for cancer diagnosis and treatment monitoring</strong><p>Evaluated extracellular vesicle biomarkers in cohorts of patients with breast or lung cancer and investigated whether early changes in vesicle biomarkers could help predict response to immune checkpoint inhibitors.</p></li>
+        <li><strong>Programmable extracellular vesicle enrichment</strong><p>Developed a programmable nanopore-based workflow for selective enrichment of extracellular vesicle subpopulations for biomarker and functional studies. The platform can process up to 100 mL of sample.</p></li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    // 可修改｜研究概覽圖的右鍵設定。
+    document.querySelector('.research-overview img').addEventListener('contextmenu', (event) => {
+      event.preventDefault();
+    });
+  </script>
+</body>
+</html>
